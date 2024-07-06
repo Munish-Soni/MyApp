@@ -1,4 +1,4 @@
-name: WordPress CI
+name: Next.js CI
 
 on: [push]
 
@@ -8,11 +8,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
         with:
-          php-version: '7.4'
+          node-version: 14
       - name: Install Dependencies
-        run: composer install
+        run: npm install
+      - name: Build
+        run: npm run build
       - name: Run Tests
-        run: phpunit
+        run: npm test
