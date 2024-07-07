@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "eslint . --c .ts,.tsx",
     "format:check": "prettier --check .",
     "build": "next build",
     "test": "jest",
